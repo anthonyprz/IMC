@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+   <script src="jquery-2.1.3.js"></script>
+        <!-- Latest compiled and minified CSS -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	    <!-- Optional theme -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+	    <!-- Latest compiled and minified JavaScript -->
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        
+        <title>indice de masa muscular</title>
+		
+    </head>
+    <body>
+    <div id="contenedor">
+
+  		<script type="text/javascript">
+		 //definimos la funcion
+		 	function calculaIMC(){
+				 //declaramos las variables
+				var peso, altura, imc, leyenda;
+				//hacemos la llamada a los datos introducidos
+				 peso=document.getElementById("peso").value;
+				 altura=document.getElementById("altura").value/100;
+				//calculamos el imc
+				 imc=peso/(altura*altura);
+				//enviamos el resultado a la caja correspondiente y lo reducimos a 2 decimales
+				document.getElementById("imc").value=imc.toFixed(2);
+				//mediante if comparamos el resultado para determinar si es correcto el peso
+					if(imc<=20.5){
+						 //determinamos el defecto en peso y definimos el comentario
+						 leyenda="Estas delgado. Debes engordar " + (altura*altura*20.5-peso).toFixed(1) + " kilos";
+					 }
+					 else if(imc>=25.5){
+						//determinamos el exceso en peso y definimos el comentario
+						leyenda="Tienes sobrepeso. Debes adelgazar "+(peso-altura*altura*25.5).toFixed(1) +" kilos";
+					}
+					else {
+						 leyenda="Estas en tu peso ideal";
+				 	}
+				//enviamos el comentario a la caja correspondiente
+				document.getElementById("leyenda").value=leyenda;
+			}
+			function vibrate () {
+					navigator.vibrate(0500);
+			}
+	
+
+		</script>
+
+       <form name="f1" id="f1" action="">
+			<!--enmarcamos el formulario-->
+			<fieldset>
+				<!--le damos un nombre al marco-->
+				<legend>CALCULO DEL PESO IDEAL IMC (Indice de Masa Corporal)</legend>
+				 <p>Peso en kg.:
+				 <!--definimos una caja donde introducir el dato del peso-->
+				 <input type="text" name="peso" id="peso" size="3" maxlength="4">
+				 </p>
+				 <p>Altura en cm.:
+				 <!--definimos una caja donde introducir el dato de la altura-->
+				 <input type="text" name="altura" id="altura" size="3" maxlength="3">
+				 <!--definimos un boton que hara la llamada a la funcion para calcular el imc-->
+				 <input type="button" value="Calcular IMC" onClick="calculaIMC(), vibrate()">
+				 </p>
+				 <p> IMC:
+				 <!--definimos una caja donde la funcion devolvera el valor de imc calculado-->
+				 <input type="text" name="imc" id="imc" size="10" maxlength="15">
+				 Leyenda:
+				 <!--definimos una caja donde la funcion escribira el comentario, definido en leyenda-->
+				 <input type="text" name="leyenda" id="leyenda" size="42">
+				 </p>
+			</fieldset>
+		</form>
+
+
+	<embed src="res\raw\dav.mp3" autostart="true" loop="true" width="2" height="0"> 
+	</embed>
+
+
+            
+      
+
+      </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+
+    </body>
+</html>

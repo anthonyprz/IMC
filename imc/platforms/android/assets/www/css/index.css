@@ -1,0 +1,29 @@
+
+
+#contenedor {
+	
+	border-radius: 5px 5px 5px 5px;
+    background-image: url("res\screen\android\wal.jpg");
+    background-color: #E1E7E9;
+    margin: auto;
+    background-size: 500px 500px 500px 500px; 
+    width: 800px;
+    height: 500px;
+    margin-top: 50px;
+    color: black;
+}
+
+#imagen{
+max-width: 55%;
+height: auto;
+margin: 20px;
+padding: 5px;
+display: block;
+margin: auto;
+}
+
+.centrar-imagen {
+text-align: center; 
+} 
+
+
